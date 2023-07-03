@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Error404 from "./components/views/Error404";
+import Menu from "./components/common/Menu";
+import Footer from "./components/common/Footer";
+import Login from "./components/views/Login";
+import DetalleProducto from "./components/views/DetalleProducto";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react"
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdmin from "./components/routes/RutasAdmin";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+    <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
+      <Routes>
+        <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
+        <Route exact path="/detalle/:id" element={<DetalleProducto></DetalleProducto>}></Route>
+        <Route path="/administrador/*" element={
+          <RutasProtegidas>
+            <RutasAdmin></RutasAdmin>
+          </RutasProtegidas>
+        }></Route>
+        <Route path="*" element={<Error404></Error404>}></Route>
+      </Routes>
+      <Footer></Footer>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

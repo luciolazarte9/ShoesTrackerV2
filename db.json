@@ -1,0 +1,64 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "Buzo GOT",
+      "calidad": "Primera calidad",
+      "imagenProducto": {
+        "0": {}
+      },
+      "color": "dfgdfg",
+      "descripcion": "Buzo elastico reversible oversize",
+      "par": "ambos",
+      "imagen": "//imagesa1.lacoste.com/dw/image/v2/BCWL_PRD/on/demandware.static/-/Sites-master/default/dw9b1d311d/BH3522_132_24.jpg?imwidth=915&impolicy=product",
+      "talle": "39",
+      "categoria": "Zapatillas Sportwear",
+      "fecha": "03/07/2023",
+      "id": 1
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombreUsuario": "admin",
+      "email": "admin@admin.com",
+      "password": "12345678aA$"
+    }
+  ],
+  "maquinas": [
+    {
+      "nombreMaquina": "Maquina 1",
+      "tareas": "Tiene que procesar las zapatillas",
+      "trabajo": "Mantenimiento",
+      "fecha": "03/07/2023",
+      "id": 2
+    },
+    {
+      "nombreMaquina": "Maquina 1",
+      "tareas": "Tiene que procesar las zapatillas",
+      "trabajo": "Pausar produccion",
+      "fecha": "03/07/2023",
+      "id": 3
+    },
+    {
+      "nombreMaquina": "Maquina 1",
+      "tareas": "Tiene que procesar las zapatillas",
+      "trabajo": "Mantenimiento",
+      "fecha": "03/07/2023",
+      "id": 4
+    },
+    {
+      "nombreMaquina": "Maquina 1",
+      "tareas": "Tiene que procesar las zapatillas",
+      "trabajo": "Mantenimiento",
+      "fecha": "03/07/2023",
+      "id": 5
+    },
+    {
+      "nombreMaquina": "Maquina 1",
+      "tareas": "Tiene que procesar las zapatillas",
+      "trabajo": "Mantenimiento",
+      "fecha": "03/07/2023",
+      "id": 6
+    }
+  ]
+}
